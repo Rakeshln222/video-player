@@ -1,0 +1,77 @@
+body {
+    background: linear-gradient(120deg, #232526, #414345);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.video-player-container {
+    background: rgba(30,30,30,0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    overflow: hidden;
+    width: 600px;
+    max-width: 95vw;
+    position: relative;
+    padding-bottom: 20px;
+}
+video {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    background: #000;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(20,20,20,0.8);
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    z-index: 2;
+}
+.control-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.control-btn:hover {
+    color: #00e6d0;
+}
+#seek-bar, #volume-bar {
+    accent-color: #00e6d0;
+    cursor: pointer;
+}
+#seek-bar {
+    flex: 1;
+}
+#volume-bar {
+    width: 80px;
+}
+.progress-bar {
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 5px;
+    background: rgba(0,0,0,0.2);
+    z-index: 3;
+}
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00e6d0, #0072ff);
+    border-radius: 0 20px 20px 0;
+    transition: width 0.2s;
+}
+@media (max-width: 700px) {
+    .video-player-container {
+        width: 100vw;
+        border-radius: 0;
+    }
+    .controls {
+        padding: 10px 5px;
+    }
+}
